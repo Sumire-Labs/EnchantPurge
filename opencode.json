@@ -1,0 +1,76 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "default_agent": "build",
+  "agent": {
+    "build": {
+      "description": "Primary orchestrator. Delegates implementation to coder and exploration to explore.",
+      "mode": "primary",
+      "model": "openai/gpt-5.5",
+      "prompt": "{file:./prompts/orchestrator.txt}",
+      "temperature": 0.2,
+      "reasoningEffort": "high",
+      "permission": {
+        "edit": "deny",
+        "write": "deny",
+        "apply_patch": "deny",
+        "bash": "deny",
+        "task": {
+          "*": "deny",
+          "coder": "allow",
+          "explore": "allow",
+          "reviewer": "allow",
+          "test-runner": "allow",
+          "doc-writer": "allow"
+        }
+      }
+    },
+    "coder": {
+      "description": "実装担当。具体的な実装タスクが発生したら必ず呼び出す",
+      "mode": "subagent",
+      "model": "deepseek/deepseek-v4-pro",
+      "prompt": "{file:./prompts/coder.txt}",
+      "temperature": 0.1,
+      "permission": {
+        "edit": "allow",
+        "write": "allow",
+        "apply_patch": "allow",
+        "bash": {
+          "rm -rf *": "ask",
+          "git push --force*": "ask",
+          "*": "allow"
+        }
+      }
+    },
+    "explore": {
+      "description": "コード調査・探索担当。実装方針を決める前のコードベース把握、依存関係の追跡、既存実装の特定などに必ず呼び出す。書き込みは行わない読み取り専用エージェント。",
+      "mode": "subagent",
+      "model": "deepseek/deepseek-v4-flash",
+      "prompt": "{file:./prompts/explore.txt}",
+      "temperature": 0.1,
+      "permission": {
+        "edit": "deny",
+        "write": "deny",
+        "apply_patch": "deny",
+        "bash": {
+          "ls*": "allow",
+          "cat*": "allow",
+          "find*": "allow",
+          "grep*": "allow",
+          "rg*": "allow",
+          "fd*": "allow",
+          "tree*": "allow",
+          "wc*": "allow",
+          "head*": "allow",
+          "tail*": "allow",
+          "git log*": "allow",
+          "git diff*": "allow",
+          "git show*": "allow",
+          "git blame*": "allow",
+          "git status*": "allow",
+          "git ls-files*": "allow",
+          "*": "deny"
+        }
+      }
+    }
+  }
+}
