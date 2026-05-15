@@ -1,0 +1,32 @@
+# Disenchanter English language file
+
+prefix: "<gray>[<gold>Disenchanter</gold>]</gray> "
+
+messages:
+  no_permission: "<red>You don't have permission to use this command.</red>"
+  no_item_in_hand: "<red>You must hold an item in your hand.</red>"
+  no_enchantments: "<red>This item has no enchantments.</red>"
+  item_not_supported: "<red>This item is not supported.</red>"
+  not_allowed_item: "<red>This item is not supported.</red>"
+  insufficient_exp: "<red>You don't have enough experience levels (required: <required>).</red>"
+  insufficient_money: "<red>You don't have enough money (required: <required>).</red>"
+  insufficient_items: "<red>You don't have the required items: <items></red>"
+  remove_success_individual: "<green>Removed <enchant> Lv.<level>!</green>"
+  remove_success_bulk: "<green>Removed all enchantments (<count>)!</green>"
+  curse_not_removable: "<red>Curse enchantments cannot be removed.</red>"
+  skipped_curses: "<yellow><count> curse enchantments were skipped.</yellow>"
+  operation_blocked_reloading: "<red>Configuration is reloading. Please try again shortly.</red>"
+  reload_success: "<green>Configuration reloaded successfully.</green>"
+  reload_failed: "<red>Failed to reload configuration. Check the console.</red>"
+  feature_preparing: "<yellow>This feature is under preparation.</yellow>"
+
+gui:
+  title: "<gold>Enchantment Removal</gold>"
+  bulk_button_name: "<yellow>Remove All Enchantments</yellow>"
+  bulk_button_lore:
+    - "<gray>Click for bulk removal</gray>"
+    - "<gray>Cost: <cost></gray>"
+  enchant_lore:
+    - "<gray>Click to remove this enchantment</gray>"
+    - "<gray>Cost: <cost></gray>"
+  close: "<gray>Close</gray>"

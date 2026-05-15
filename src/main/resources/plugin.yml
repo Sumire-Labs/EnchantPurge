@@ -1,0 +1,41 @@
+name: Disenchanter
+version: '1.0.0'
+main: com.example.disenchanter.DisenchanterPlugin
+api-version: '26.1.2'
+softdepend: [Vault, PlaceholderAPI]
+
+commands:
+  disenchant:
+    description: Open the enchantment removal GUI
+    usage: /<command> [reload]
+    permission: disenchant.use
+
+permissions:
+  disenchant.use:
+    description: Allows use of the /disenchant command
+    default: true
+  disenchant.use.individual:
+    description: Allows individual enchantment removal
+    default: true
+  disenchant.use.bulk:
+    description: Allows bulk enchantment removal
+    default: true
+  disenchant.use.curse:
+    description: Allows removal of curse enchantments
+    default: op
+  disenchant.bypass.cost:
+    description: Bypasses cost for enchantment removal
+    default: op
+  disenchant.admin.reload:
+    description: Allows reloading the plugin configuration
+    default: op
+  disenchant.*:
+    description: Grants all Disenchanter permissions
+    default: op
+    children:
+      disenchant.use: true
+      disenchant.use.individual: true
+      disenchant.use.bulk: true
+      disenchant.use.curse: true
+      disenchant.bypass.cost: true
+      disenchant.admin.reload: true

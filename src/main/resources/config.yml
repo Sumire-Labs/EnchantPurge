@@ -1,0 +1,63 @@
+# Disenchanter configuration file
+# See docs/spec.md §5.2 for detailed explanation
+
+# Language file to use (filename in lang/ directory, without .yml extension)
+language: ja_JP
+
+# Behavior of removed enchantments
+# vanish: disappear / book: converted to enchanted book / exp: converted to experience
+removal_mode: book
+
+# Experience conversion settings (used only when removal_mode is exp)
+exp_conversion:
+  # Enchantment level × multiplier = experience points returned
+  multiplier: 30
+
+# Cost settings
+cost:
+  # Cost for individual removal
+  individual:
+    exp_level: 3
+    money: 100.0       # Requires Vault. Set to 0 to disable
+    items: []
+    # Example item cost:
+    # - material: LAPIS_LAZULI
+    #   amount: 3
+  # Cost for bulk removal
+  bulk:
+    exp_level: 10
+    money: 500.0
+    items: []
+
+# Target item settings
+target:
+  # mode: whitelist or blacklist
+  mode: blacklist
+  whitelist: []
+  blacklist:
+    - ELYTRA
+  # Whether enchanted books are eligible targets
+  include_enchanted_books: false
+
+# Curse enchantment handling
+curses:
+  # Whether curses can be removed at all
+  removable: true
+  # Multiplier applied to the normal cost for curse removal
+  extra_cost_multiplier: 2.0
+
+# GUI settings
+gui:
+  # GUI title (MiniMessage format supported)
+  title: "<gold>エンチャント剥がし</gold>"
+  # Bulk removal button position (inventory slot number)
+  bulk_button_slot: 49
+
+# Logging settings
+logging:
+  # Output to console
+  console: true
+  # Output to dedicated file (plugins/Disenchanter/logs/disenchant-YYYY-MM-DD.log)
+  file: true
+  # Log format. Available placeholders: {time}, {player}, {enchant}, {level}, {item}, {cost}
+  format: "[{time}] {player} removed {enchant} Lv.{level} from {item} (cost: {cost})"
