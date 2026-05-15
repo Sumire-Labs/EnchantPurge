@@ -1,4 +1,4 @@
-# Disenchanter configuration file
+# EnchantPurge configuration file
 # See docs/spec.md §5.2 for detailed explanation
 
 # Language file to use (filename in lang/ directory, without .yml extension)
@@ -57,7 +57,7 @@ gui:
 logging:
   # Output to console
   console: true
-  # Output to dedicated file (plugins/Disenchanter/logs/disenchant-YYYY-MM-DD.log)
+  # Output to dedicated file (plugins/EnchantPurge/logs/disenchant-YYYY-MM-DD.log)
   file: true
   # Log format. Available placeholders: {time}, {player}, {enchant}, {level}, {item}, {cost}
   format: "[{time}] {player} removed {enchant} Lv.{level} from {item} (cost: {cost})"

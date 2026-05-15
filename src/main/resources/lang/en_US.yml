@@ -1,6 +1,6 @@
-# Disenchanter English language file
+# EnchantPurge English language file
 
-prefix: "<gray>[<gold>Disenchanter</gold>]</gray> "
+prefix: "<gray>[<gold>EnchantPurge</gold>]</gray> "
 
 messages:
   no_permission: "<red>You don't have permission to use this command.</red>"

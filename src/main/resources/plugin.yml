@@ -1,6 +1,6 @@
-name: Disenchanter
+name: EnchantPurge
 version: '1.0.0'
-main: com.example.disenchanter.DisenchanterPlugin
+main: com.example.enchantpurge.EnchantPurgePlugin
 api-version: '26.1.2'
 softdepend: [Vault, PlaceholderAPI]
 
@@ -30,7 +30,7 @@ permissions:
     description: Allows reloading the plugin configuration
     default: op
   disenchant.*:
-    description: Grants all Disenchanter permissions
+    description: Grants all EnchantPurge permissions
     default: op
     children:
       disenchant.use: true

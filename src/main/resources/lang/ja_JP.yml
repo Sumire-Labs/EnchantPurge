@@ -1,6 +1,6 @@
-# Disenchanter Japanese language file
+# EnchantPurge Japanese language file
 
-prefix: "<gray>[<gold>Disenchanter</gold>]</gray> "
+prefix: "<gray>[<gold>EnchantPurge</gold>]</gray> "
 
 messages:
   no_permission: "<red>このコマンドを実行する権限がありません。</red>"
