@@ -1,1 +1,1 @@
-rootProject.name = "Disenchanter"
+rootProject.name = "EnchantPurge"
